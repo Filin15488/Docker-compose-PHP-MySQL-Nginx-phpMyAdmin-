@@ -23,4 +23,5 @@ docker-compose up (запустит контейнеры)
 Если консоль заблокирована процессом, то процесс можно остановить нажав Ctrl+C
 Команда, чтобы остановить процесс выполнения контейнеров docker-compose down
 Запустим контейнеры
+
 ![изображение](https://github.com/Filin15488/Docker-compose-PHP-MySQL-Nginx-phpMyAdmin-/assets/92125747/194abda3-a35a-412a-b8d4-94faef344a2e)
