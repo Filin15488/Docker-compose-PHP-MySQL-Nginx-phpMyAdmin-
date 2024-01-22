@@ -110,14 +110,22 @@ volume подключаем к контейнеру статику (- ./src:/var
 
 ![изображение](https://github.com/Filin15488/Docker-compose-PHP-MySQL-Nginx-phpMyAdmin-/assets/92125747/cb7c9883-f11a-45c2-b6e0-2b7e2841fc38)
 
-<?
-$connect = mysqli_connect($_ENV["MYSQL_HOST"],$_ENV["MYSQL_USER"],$_ENV["MYSQL_PASSWORD"],$_ENV["MYSQL_DATABASE"]);
-if (mysqli_connect_errno()) {
-    printf("error: %s\n", mysqli_connect_error());
-    exit();
-}
-mysqli_query($connect, "SET NAMES utf8");
-?>
-
 
 Еще хочу обратить внимание в файле docker-compose.yml мы подключаем images, из которых будет создан контейнер. Тут можно выбрать версию приложения. Для важных вещей есть смысл указывать точную версию, ну а например phpmyadmin можно брать всегда последнюю версию
+
+![изображение](https://github.com/Filin15488/Docker-compose-PHP-MySQL-Nginx-phpMyAdmin-/assets/92125747/9e2abfa8-b381-4c37-8bc2-80f39d52446b)
+
+Но в сервисе php мы выбрали не image, а путь до файла Dockerfile
+
+![изображение](https://github.com/Filin15488/Docker-compose-PHP-MySQL-Nginx-phpMyAdmin-/assets/92125747/d0be5879-00c4-43b2-919f-da8279e993e4)
+
+Dockerfile (сервиса php)
+
+В php мы уже не просто хотим взять image с версией php:7.4.29-fpm, но и произвести настройку контейнера. Установить службы для работы с MySQL, установить composer и др.
+
+![изображение](https://github.com/Filin15488/Docker-compose-PHP-MySQL-Nginx-phpMyAdmin-/assets/92125747/2abf8328-a235-49a3-b819-06aaadafd0c7)
+
+И последняя команда docker system prune для чистки системы от созданных докером контейнеров, volumes, сетей. Она нужна, если мы закончили работу над проектом и не хотим хранить кучу мусора на компьютере.
+
+
+
