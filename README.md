@@ -1,2 +1,1 @@
-# Docker-compose-PHP-MySQL-Nginx-phpMyAdmin-
-I find it!
+nginx + php + mysql + phpmyadmin
