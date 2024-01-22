@@ -1,1 +1,1 @@
-nginx + php + mysql + phpmyadmin
+I foun it and it is work!
