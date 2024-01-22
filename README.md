@@ -109,6 +109,7 @@ volume подключаем к контейнеру статику (- ./src:/var
 В PHP потом их можно взять из глобального массива $_ENV
 
 ![изображение](https://github.com/Filin15488/Docker-compose-PHP-MySQL-Nginx-phpMyAdmin-/assets/92125747/cb7c9883-f11a-45c2-b6e0-2b7e2841fc38)
+
 <?
 $connect = mysqli_connect($_ENV["MYSQL_HOST"],$_ENV["MYSQL_USER"],$_ENV["MYSQL_PASSWORD"],$_ENV["MYSQL_DATABASE"]);
 if (mysqli_connect_errno()) {
