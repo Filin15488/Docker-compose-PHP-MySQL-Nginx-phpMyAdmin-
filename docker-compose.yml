@@ -23,7 +23,7 @@ services:
     container_name: tools_php-nginx
     restart: unless-stopped
     ports:
-      - 80:80
+      - 8080:80
     volumes:
       - ./src:/var/www
       - ./nginx:/etc/nginx/conf.d 
